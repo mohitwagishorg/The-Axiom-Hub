@@ -19,8 +19,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173", // 👈 specific origin, not "*"
-    credentials: true, // 👈 allow cookies/auth headers
+    origin: process.env.ORIGIN_ACCESS_URL
+      ? process.env.ORIGIN_ACCESS_URL.split(",").map((url) => url.trim())
+      : ["http://localhost:5173", "https://the-axiom-hub.onrender.com"],
+    credentials: true,
   })
 );
 
