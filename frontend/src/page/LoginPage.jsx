@@ -25,14 +25,14 @@ const LoginPage = () => {
  
   
 
-  // const onSubmit = async (data) => {
-  //   try {
-  //     await login(data);
-  //     console.log("Logging Data", data);
-  //   } catch (error) {
-  //     console.error("Login Failed", error);
-  //   }
-  // };
+  const onSubmit = async (data) => {
+    try {
+      await login(data);
+      console.log("Logging Data", data);
+    } catch (error) {
+      console.error("Login Failed", error);
+    }
+  };
 
   return (
     <div className="h-screen grid lg:grid-cols-2">
